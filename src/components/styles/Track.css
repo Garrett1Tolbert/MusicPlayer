@@ -1,0 +1,27 @@
+.track-wrapper {
+  z-index: 9;
+}
+
+.track-wrapper img {
+  height: auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.track-wrapper h1 {
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+}
+
+.track-wrapper p {
+  margin: 4px 0 0 0;
+  width: 100%;
+  font-size: 14px;
+  color: #777;
+}
+/*# sourceMappingURL=Track.css.map */

@@ -1,0 +1,120 @@
+.auth-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, #1db954, #061700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .auth-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &.show {
+            h1 {
+                animation: text 0.5s 1s ease-out both;
+            }
+            & .cta {
+                animation: cta 0.35s 1.75s ease-out both;
+            }
+            & .guest-cta {
+                animation: guest 0.35s 2.75s ease-out both;
+            }
+        }
+        h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 32px;
+            line-height: 40px;
+            width: 75%;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 1.75px;
+        }
+        & .cta {
+            height: 50px;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 0 16px 0 0;
+            margin-top: 35px;
+            align-items: center;
+            backdrop-filter: saturate(180%) blur(20px);
+            cursor: pointer;
+            &:hover {
+                background: rgba(119, 119, 119, 0.5);
+            }
+            img {
+                left: 0;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+            p {
+                margin: 0;
+                margin-left: 8px;
+                color: #fff;
+                font-size: 24px;
+                font-weight: 300;
+                text-align: center;
+            }
+        }
+        & .guest-cta {
+            height: 50px;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            padding: 0 0 0 16px;
+            position: relative;
+            margin-top: 35px;
+            align-items: center;
+            backdrop-filter: saturate(180%) blur(20px);
+            cursor: pointer;
+            p {
+                margin-right: 12px;
+                color: #fff;
+            }
+            i {
+                background-color: #fff;
+                padding: 13px;
+                font-size: 24px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+@keyframes text {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes cta {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes guest {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

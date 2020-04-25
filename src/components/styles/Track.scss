@@ -1,0 +1,22 @@
+.track-wrapper {
+    z-index: 9;
+    img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 8px;
+    }
+    h1 {
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+        color: #fff;
+    }
+    p {
+        margin: 4px 0 0 0;
+        width: 100%;
+        font-size: 14px;
+        color: #777;
+    }
+}

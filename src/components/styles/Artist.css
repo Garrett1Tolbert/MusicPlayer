@@ -1,0 +1,46 @@
+.artist-wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.artist-wrapper img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.artist-wrapper h3 {
+  margin: 0;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.artist-wrapper p {
+  text-align: center;
+  margin: 4px 0 0 0;
+  width: 75%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #777;
+}
+/*# sourceMappingURL=Artist.css.map */
