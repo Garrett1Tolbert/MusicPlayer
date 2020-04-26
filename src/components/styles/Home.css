@@ -25,7 +25,6 @@
   position: relative;
   margin-top: 80px;
   z-index: 50;
-  height: 62.5%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;

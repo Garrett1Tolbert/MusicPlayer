@@ -3,7 +3,7 @@ import AppReducer from './appReducer';
 
 const initialState = {
     token: localStorage.getItem('') || '',
-    currTrack: '',
+    currTrack: null,
     searchedTracks: [],
     searchedArtist: '',
     similarArtists: [],
@@ -27,9 +27,12 @@ const MainContextProvider = ({ children }) => {
         });
     };
     const updateTracks = (tracks) => {
+        console.log(tracks.length);
+        if (tracks.length > 4) tracks = tracks.slice(0, 4);
+
         dispatch({
             type: 'UPDATE_TRACKS',
-            payload: tracks.slice(0, 4),
+            payload: tracks,
         });
     };
     const updateArtists = (artist, artists) => {

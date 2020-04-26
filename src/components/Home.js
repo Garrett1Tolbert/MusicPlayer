@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { fetchArtist } from '../spotifyFunctions';
 import Track from './Track';
 import Artist from './Artist';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 const Home = () => {
     const url = window.location.href;
@@ -20,6 +20,7 @@ const Home = () => {
     } = useContext(MainContext);
     const [query, setQuery] = useState('');
     const [searchQuery, setSearchQuery] = useState(false);
+    const [currPlayer, setCurrPlayer] = useState(null);
 
     useEffect(() => {
         if (url.length > 35) {
@@ -35,6 +36,25 @@ const Home = () => {
         if (localStorage.getItem('token')) window.location.hash = '';
     }, [saveToken]);
 
+    useEffect(() => {
+        if (currTrack) {
+            var sound = new Howl({
+                src: [currTrack.preview_url],
+                format: ['mp3'],
+                onload: function () {
+                    console.log(currTrack.preview_url);
+                },
+                onend: function () {
+                    console.log('Finished!');
+                },
+            });
+            if (currPlayer) sound.stop();
+            else setCurrPlayer(sound.play());
+        }
+    }, [currTrack]);
+    useEffect(() => {
+        console.log(`track playing on player ${currPlayer}`);
+    }, [currPlayer]);
     const handleSearchClick = async () => {
         if (searchQuery) {
             setSearchQuery(false);
