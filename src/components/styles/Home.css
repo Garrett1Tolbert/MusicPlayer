@@ -1,6 +1,6 @@
 .home-wrapper {
   background: #212121;
-  height: 100vh;
+  padding-bottom: 16px;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,6 +19,26 @@
   width: 100%;
   padding: 0 16px;
   position: relative;
+}
+
+.home-wrapper .home-container .empty {
+  height: 90vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-wrapper .home-container .empty h1 {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 400;
 }
 
 .home-wrapper .home-container .search-results {

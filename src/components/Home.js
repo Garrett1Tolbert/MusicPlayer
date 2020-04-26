@@ -83,7 +83,11 @@ const Home = () => {
                         <Track key={idx} data={item} />
                     ))}
                 </div>
-                {similarArtists.length === 0 ? null : (
+                {similarArtists.length === 0 ? (
+                    <div className='empty'>
+                        <h1>No Results</h1>
+                    </div>
+                ) : (
                     <div className='similar-artists'>
                         <h1>Similar to {searchedArtist}</h1>
                         <div className='artists'>
