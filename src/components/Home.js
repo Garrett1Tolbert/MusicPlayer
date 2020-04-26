@@ -7,6 +7,7 @@ import Track from './Track';
 import Artist from './Artist';
 import { Howl } from 'howler';
 import MediaPlayer from './MediaPlayer';
+import Auth from './Auth';
 
 const Home = () => {
     const url = window.location.href;
@@ -75,7 +76,8 @@ const Home = () => {
         await fetchArtist(artist, updateTracks, updateArtists);
     };
     return !localStorage.getItem('token') ? (
-        <Redirect to='/auth' />
+        // <Redirect to='/auth' />
+        <Auth />
     ) : (
         <div className={currTrack ? 'home-wrapper isPlaying' : 'home-wrapper'}>
             <div className='home-container'>

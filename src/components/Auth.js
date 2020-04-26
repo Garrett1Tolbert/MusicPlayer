@@ -32,7 +32,7 @@ const Auth = () => {
                     <img alt='spotify logo' src={spotify} />
                     <p>Authenticate</p>
                 </div>
-                <Link to='/'>
+                {/* <Link to='/'>
                     <div
                         className='guest-cta'
                         onClick={() => saveToken('guest')}
@@ -40,7 +40,7 @@ const Auth = () => {
                         <p>Guest</p>
                         <i className='material-icons'>arrow_forward</i>
                     </div>
-                </Link>
+                </Link> */}
             </div>
         </div>
     );
