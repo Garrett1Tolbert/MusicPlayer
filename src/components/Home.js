@@ -69,6 +69,10 @@ const Home = () => {
             await fetchArtist(query, updateTracks, updateArtists);
         }
     };
+    const handleArtistClick = async (artist) => {
+        setQuery(artist);
+        await fetchArtist(artist, updateTracks, updateArtists);
+    };
     return !localStorage.getItem('token') ? (
         <Redirect to='/auth' />
     ) : (
@@ -84,7 +88,11 @@ const Home = () => {
                         <h1>Similar to {searchedArtist}</h1>
                         <div className='artists'>
                             {similarArtists.map((item, idx) => (
-                                <Artist key={idx} data={item} />
+                                <Artist
+                                    key={idx}
+                                    data={item}
+                                    onClick={handleArtistClick}
+                                />
                             ))}
                         </div>
                     </div>
