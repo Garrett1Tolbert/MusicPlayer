@@ -8,10 +8,15 @@ import { MainContext } from '../context/MainContext';
 const Auth = () => {
     const [animate, setAnimate] = useState(false);
     const { saveToken } = useContext(MainContext);
+    console.log();
 
     const authenticate = () => {
         const scopes = 'user-read-private user-read-email';
-        const redirect_uri = 'http://localhost:3000/';
+        const redirect_uri = window.location.href.includes(
+            'http://localhost:3000/'
+        )
+            ? 'http://localhost:3000/'
+            : 'https://splotify.netlify.app/';
         window.location =
             'https://accounts.spotify.com/authorize' +
             '?response_type=token' +
