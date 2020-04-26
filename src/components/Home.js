@@ -35,26 +35,30 @@ const Home = () => {
     useEffect(() => {
         if (localStorage.getItem('token')) window.location.hash = '';
     }, [saveToken]);
-
     useEffect(() => {
         if (currTrack) {
-            var sound = new Howl({
-                src: [currTrack.preview_url],
-                format: ['mp3'],
-                onload: function () {
-                    console.log(currTrack.preview_url);
-                },
-                onend: function () {
-                    console.log('Finished!');
-                },
-            });
-            if (currPlayer) sound.stop();
-            else setCurrPlayer(sound.play());
+            if (currPlayer !== null) {
+                currPlayer.stop();
+                currPlayer.unload();
+            } else {
+                var sound = new Howl({
+                    src: [currTrack.preview_url],
+                    format: ['mp3'],
+                });
+                setCurrPlayer(sound);
+                sound.play();
+            }
+            if (currPlayer !== null && currPlayer.state() === 'unloaded') {
+                sound = new Howl({
+                    src: [currTrack.preview_url],
+                    format: ['mp3'],
+                });
+                setCurrPlayer(sound);
+                sound.play();
+            }
         }
     }, [currTrack]);
-    useEffect(() => {
-        console.log(`track playing on player ${currPlayer}`);
-    }, [currPlayer]);
+
     const handleSearchClick = async () => {
         if (searchQuery) {
             setSearchQuery(false);

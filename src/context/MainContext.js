@@ -27,7 +27,6 @@ const MainContextProvider = ({ children }) => {
         });
     };
     const updateTracks = (tracks) => {
-        console.log(tracks.length);
         if (tracks.length > 4) tracks = tracks.slice(0, 4);
 
         dispatch({
