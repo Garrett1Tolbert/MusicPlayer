@@ -3,6 +3,7 @@ import AppReducer from './appReducer';
 
 const initialState = {
     token: localStorage.getItem('') || '',
+    currTrack: '',
     searchedTracks: [],
     searchedArtist: '',
     similarArtists: [],
@@ -17,6 +18,12 @@ const MainContextProvider = ({ children }) => {
         dispatch({
             type: 'SAVE_TOKEN',
             payload: token,
+        });
+    };
+    const playTrack = (track) => {
+        dispatch({
+            type: 'PLAY_TRACK',
+            payload: track,
         });
     };
     const updateTracks = (tracks) => {
@@ -35,12 +42,14 @@ const MainContextProvider = ({ children }) => {
         <MainContext.Provider
             value={{
                 token: state.token,
+                currTrack: state.currTrack,
                 searchedTracks: state.searchedTracks,
                 searchedArtist: state.searchedArtist,
                 similarArtists: state.similarArtists,
                 saveToken,
                 updateTracks,
                 updateArtists,
+                playTrack,
             }}
         >
             {children}

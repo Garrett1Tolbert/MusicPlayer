@@ -5,12 +5,14 @@ import { Redirect } from 'react-router-dom';
 import { fetchArtist } from '../spotifyFunctions';
 import Track from './Track';
 import Artist from './Artist';
+import { Howl, Howler } from 'howler';
 
 const Home = () => {
     const url = window.location.href;
     const {
         updateTracks,
         updateArtists,
+        currTrack,
         searchedArtist,
         similarArtists,
         searchedTracks,
@@ -88,4 +90,5 @@ const Home = () => {
         </div>
     );
 };
+
 export default Home;

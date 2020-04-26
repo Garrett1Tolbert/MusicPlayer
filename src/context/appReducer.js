@@ -3,6 +3,8 @@ export default (state, action) => {
         case 'SAVE_TOKEN':
             localStorage.setItem('token', action.payload);
             return state;
+        case 'PLAY_TRACK':
+            return { ...state, currTrack: action.payload };
         case 'UPDATE_TRACKS':
             return { ...state, searchedTracks: action.payload };
         case 'UPDATE_ARTISTS':

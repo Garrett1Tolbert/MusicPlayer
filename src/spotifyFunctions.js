@@ -13,7 +13,6 @@ const fetchRelatedArtists = async (artist, artistID, cb) => {
     );
 };
 export const fetchArtist = async (artist, cb1, cb2) => {
-    artist = encodeURIComponent(artist);
     spotifyApi.searchArtists(artist).then(
         (data) => {
             let artistID = data.artists.items[0].id;
