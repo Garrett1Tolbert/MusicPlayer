@@ -12,6 +12,11 @@
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  position: relative;
+}
+
+.home-wrapper.isPlaying {
+  padding-bottom: 100px;
 }
 
 .home-wrapper .home-container {

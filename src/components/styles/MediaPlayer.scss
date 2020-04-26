@@ -1,0 +1,53 @@
+.mp-wrapper {
+    position: fixed;
+    width: 85%;
+    background-color: rgba(82, 84, 86, 0.5);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-radius: 40px;
+    z-index: 85;
+    bottom: 16px;
+    padding: 12px 16px;
+    & .mp-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+        & .mp-si {
+            width: 85%;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: flex-start;
+            h2 {
+                font-size: 24px;
+                font-weight: 300px;
+                width: 100%;
+                margin: 0;
+                color: #c8c8c8;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            p {
+                margin: 4px 0 0 0;
+                width: 100%;
+                font-size: 14px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #bdbdbd;
+            }
+        }
+        i {
+            margin-left: 16px;
+            font-size: 48px;
+            color: #eeeeee;
+        }
+    }
+}

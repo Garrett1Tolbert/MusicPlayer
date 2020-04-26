@@ -6,6 +6,7 @@ import { fetchArtist } from '../spotifyFunctions';
 import Track from './Track';
 import Artist from './Artist';
 import { Howl } from 'howler';
+import MediaPlayer from './MediaPlayer';
 
 const Home = () => {
     const url = window.location.href;
@@ -76,7 +77,7 @@ const Home = () => {
     return !localStorage.getItem('token') ? (
         <Redirect to='/auth' />
     ) : (
-        <div className='home-wrapper'>
+        <div className={currTrack ? 'home-wrapper isPlaying' : 'home-wrapper'}>
             <div className='home-container'>
                 <div className='search-results'>
                     {searchedTracks.map((item, idx) => (
@@ -123,6 +124,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {currTrack ? <MediaPlayer currPlayer={currPlayer} /> : null}
         </div>
     );
 };
